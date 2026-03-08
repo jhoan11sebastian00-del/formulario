@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Trabajadores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        .container {
+            background: #ffffff;
+            width: 750px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .title {
+            background-color: #2f6f5f;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+        .col-50 {
+            flex: 1;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        .file-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .radio-group label {
+            font-weight: normal;
+            display: inline;
+        }
+        .btn {
+            background-color: #2f6f5f;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #1e4f42;
+        }
+        .mensaje-exito {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 400px;
+            margin: 20px auto;
+        }
+        .mensaje-exito h1 {
+            margin-bottom: 15px;
+        }
+        .boton {
+            display: inline-block;
+            background-color: #2f6f5f;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .boton:hover {
+            background-color: #1e4f42;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Registro de Trabajadores</div>
+        <form>
+            <div class="form-group">
+                <label>RUC</label>
+                <input type="text" name="ruc" required>
+            </div>
+            <div class="row">
+                <div class="col-50 form-group">
+                    <label>Primer Nombre</label>
+                    <input type="text" name="primer_nombre" required>
+                </div>
+                <div class="col-50 form-group">
+                    <label>Segundo Nombre</label>
+                    <input type="text" name="segundo_nombre">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-50 form-group">
+                    <label>Primer Apellido</label>
+                    <input type="text" name="primer_apellido" required>
+                </div>
+                <div class="col-50 form-group">
+                    <label>Segundo Apellido</label>
+                    <input type="text" name="segundo_apellido">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-50 form-group">
+                    <label>Correo</label>
+                    <input type="email" name="correo" required>
+                </div>
+                <div class="col-50 form-group">
+                    <label>Fecha de Nacimiento</label>
+                    <input type="date" name="fecha_nacimiento" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Género</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="genero" value="Masculino"> Masculino</label>
+                    <label><input type="radio" name="genero" value="Femenino"> Femenino</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Nivel de Estudio</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="nivel_estudio" value="No tiene"> No tiene</label>
+                    <label><input type="radio" name="nivel_estudio" value="Bachiller"> Bachiller</label>
+                    <label><input type="radio" name="nivel_estudio" value="Técnico"> Técnico</label>
+                    <label><input type="radio" name="nivel_estudio" value="Tecnólogo"> Tecnólogo</label>
+                    <label><input type="radio" name="nivel_estudio" value="Universitario"> Universitario</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-50 form-group">
+                    <label>Ciudad</label>
+                    <select name="ciudad" required>
+                        <option value="">Seleccionar</option>
+                        <option>Bogotá</option>
+                        <option>Barranquilla</option>
+                        <option>Cartagena</option>
+                        <option>Santander</option>
+                    </select>
+                </div>
+                <div class="col-50 form-group">
+                    <label>Hoja de Vida</label>
+                    <input type="file" name="hoja_vida" class="file-input">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Foto</label>
+                <input type="file" name="foto" class="file-input">
+            </div>
+            <button type="submit" class="btn">Registrar Trabajador</button>
+        </form>
+    </div>
+
+    <!-- Mensaje de éxito (se muestra después del envío) -->
+    <div class="mensaje-exito">
+        <h1>Registro Exitoso</h1>
+        <p>El trabajador ha sido registrado correctamente en el sistema.</p>
+        <a href="index.html" class="boton">Volver al inicio</a>
+    </div>
+</body>
+</html>
